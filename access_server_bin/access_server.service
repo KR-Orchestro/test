@@ -1,0 +1,16 @@
+[Unit]
+Description=Accessi Server Service
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/access_server_bin/
+ExecStart=/home/ubuntu/access_server_bin/access_server_sysrun.sh
+#Restart=on-failure
+RemainAfterExit=no
+Restart=always
+Restart=5s
+
+[Install]
+WantedBy=multi-user.target
